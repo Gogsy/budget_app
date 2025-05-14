@@ -1,0 +1,3 @@
+# Budget App
+
+Personal budget management application built with Node.js, Vue 3, and SQLite/PostgreSQL. Modular structure...
