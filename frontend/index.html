@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Budget App</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- 🔹 SIDEBAR NAVIGACIJA -->
+    <aside class="sidebar">
+      <h2>📊 Budget App</h2>
+      <nav>
+        <ul>
+          <li><a href="#" data-section="dashboard">🏠 Dashboard</a></li>
+          <li><a href="#" data-section="add-transaction">💸 Transakcije</a></li>
+          <li><a href="#" data-section="budget-tracker">📅 Budget Tracker</a></li>
+          <li><a href="#" data-section="accounts">💳 Računi</a></li>
+          <li><a href="#" data-section="savings">💰 Štednja</a></li>
+          <li><a href="#" data-section="debts">📉 Dugovi</a></li>
+          <li><a href="#" data-section="reports">📁 Izvještaji</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- 🔹 SADRŽAJNI PANEL -->
+    <main class="main-content">
+      
+      <!-- SEKCIJA: Dashboard (placeholder) -->
+      <section id="dashboard" class="app-section">
+<!-- SEKCIJA: Dashboard -->
+<section id="dashboard" class="app-section">
+  <h1>📊 Pregled aplikacije</h1>
+
+  <!-- Info kartice -->
+  <div class="dashboard-cards">
+    <div class="card" id="total-balance">💰 Ukupno stanje: -- €</div>
+    <div class="card" id="total-budget">📅 Budžet za mjesec: -- €</div>
+    <div class="card" id="total-spent">🔥 Potrošeno: -- €</div>
+    <div class="card" id="total-transactions">📥 Transakcija: --</div>
+  </div>
+
+  <!-- Grafikoni -->
+  <div class="chart-container">
+    <h3>🧮 Raspodjela troškova</h3>
+    <canvas id="categoryChart" width="400" height="200"></canvas>
+  </div>
+
+  <div class="chart-container">
+    <h3>📆 Potrošnja po danima</h3>
+    <canvas id="dailyChart" width="400" height="200"></canvas>
+  </div>
+</section>
+
+      </section>
+
+      <!-- SEKCIJA: Transakcije -->
+      <section id="add-transaction" class="app-section hidden">
+        <h2>💸 Dodaj Transakciju</h2>
+        <form id="transaction-form">
+          <select id="account-select"></select><br>
+          <input type="text" id="category" placeholder="Kategorija"><br>
+          <input type="number" id="amount" placeholder="Iznos"><br>
+          <select id="type">
+            <option value="expense">Trošak</option>
+            <option value="income">Prihod</option>
+          </select><br>
+          <input type="text" id="description" placeholder="Opis (opcionalno)"><br>
+          <button type="submit">Dodaj</button>
+        </form>
+        <div id="transaction-message"></div>
+      </section>
+
+      <!-- SEKCIJA: Budget Tracker -->
+      <section id="budget-tracker" class="app-section hidden">
+        <h2>📅 Pregled Budžeta</h2>
+        <div class="controls">
+          <label for="month-select">Odaberi mjesec:</label>
+          <input type="month" id="month-select" />
+          <button id="load-summary">Prikaži</button>
+        </div>
+        <div id="summary-output"></div>
+      </section>
+
+      <!-- SEKCIJE ZA KASNIJE -->
+      <section id="accounts" class="app-section hidden"><h2>💳 Računi</h2></section>
+      <section id="savings" class="app-section hidden"><h2>💰 Štednja</h2></section>
+      <section id="debts" class="app-section hidden"><h2>📉 Dugovi</h2></section>
+      <section id="reports" class="app-section hidden"><h2>📁 Izvještaji</h2></section>
+    </main>
+  </div>
+
+  <!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Glavni JS -->
+<script src="js/app.js" type="module"></script>
+<script src="js/dashboard.js" type="module"></script>
+</body>
+</html>
